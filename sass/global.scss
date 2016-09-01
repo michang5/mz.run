@@ -58,6 +58,14 @@ p {
 		display: block;
 	}
 }
+@include respond-to (normal-mobile){
+	h3 {
+		font-size: 3em;
+	}
+	h2 {
+		font-size: 2.25em;
+	}
+}
 a {
 	color: $hot-pink;
 	@include transition(color, .5s, ease-in);
@@ -197,10 +205,14 @@ blockquote {
 	&:before {
 		left: -4.5%;
 		top: 16%;
+		content: open-quote;
+		margin-right: 0.25em;
 	}
 	&:after {
 		right: -4.5%;
 		bottom: -15%;
+		content: close-quote;
+		margin-left: 0.25em;
 	}
 	h2 {
 		display: inline-block;
@@ -215,96 +227,105 @@ blockquote {
 			line-height: 24px;
 		}
 	}
+	@include respond-to (normal-mobile){
+		width: 90%;
+		&:before , &:after {
+			font-size: 3em;
+		}
+		&:before {
+			top: 13%;
+		}
+		&:after {
+			bottom: -2%;
+		}
+		h2 {
+			font-size: 1.35em;
+			span {
+				font-size: 18px;
+				line-height: 32px;
+			}
+		}
+	}
 }
-blockquote:before {
-	content: open-quote;
-	
-	margin-right: 0.25em;
-//	vertical-align: 1.05em;
-}
-blockquote:after {
-	content: close-quote;
-	margin-left: 0.25em;
-//	vertical-align: -0.5em;
-}
+
 //#modal-wrapper {
 //	perspective: none;
 //	position: relative;
 //}
-.modal {
-	position: absolute;
-	overflow-y: auto;
-	@include transparent($white,.9);
-	&#video .modal-dialog {
-		width: 100%;
-		margin: 0;
-		.modal-body {
-			padding: 0;
-		}
-		.modal-content {
-			line-height: 0;
-			
-		}
-	}
-	.modal-dialog {
-		margin: 0 auto;
-	}
-	@include respond-to (only-desktop){
-		.modal-dialog {
-			width: 80%;
-		}
-	}
-	@include respond-to (only-device){
-		&#video .modal-dialog {
-			margin: 30% 0;
-		}
-	}
-	.modal-content {
-		box-shadow: none;
-		border: 0;
-		
-		.modal-body {
-			padding: 60px 20px 20px;
-		}
-	}
-}
-.close {
-	position: absolute;
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	opacity: 1;
-	overflow: hidden;
-	display: inline-block;
-	z-index: 9999;
-	cursor: pointer;
-	top: 12px;
-	right: 12px;
-	background: $white;
-	&:hover {
-		@include transparent($yellow,.2);
-		&::before, &::after {
-			background: $yellow;
-		}
-	}
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		height: 2px;
-		width: 100%;
-		top: 50%;
-		left: 0;
-		margin-top: -1px;
-		background: $yellow;
-	}
-	&::before {
-		@include transform(rotate(45deg));
-	}
-	&::after {
-		@include transform(rotate(-45deg));
-	}
-}
+//.modal {
+//	position: absolute;
+//	overflow-y: auto;
+//	@include transparent($white,.9);
+//	&#video .modal-dialog {
+//		width: 100%;
+//		margin: 0;
+//		.modal-body {
+//			padding: 0;
+//		}
+//		.modal-content {
+//			line-height: 0;
+//			
+//		}
+//	}
+//	.modal-dialog {
+//		margin: 0 auto;
+//	}
+//	@include respond-to (only-desktop){
+//		.modal-dialog {
+//			width: 80%;
+//		}
+//	}
+//	@include respond-to (only-device){
+//		&#video .modal-dialog {
+//			margin: 30% 0;
+//		}
+//	}
+//	.modal-content {
+//		box-shadow: none;
+//		border: 0;
+//		
+//		.modal-body {
+//			padding: 60px 20px 20px;
+//		}
+//	}
+//}
+//.close {
+//	position: absolute;
+//	display: inline-block;
+//	width: 50px;
+//	height: 50px;
+//	opacity: 1;
+//	overflow: hidden;
+//	display: inline-block;
+//	z-index: 9999;
+//	cursor: pointer;
+//	top: 12px;
+//	right: 12px;
+//	background: $white;
+//	&:hover {
+//		@include transparent($yellow,.2);
+//		&::before, &::after {
+//			background: $yellow;
+//		}
+//	}
+//	&::before,
+//	&::after {
+//		content: '';
+//		position: absolute;
+//		height: 2px;
+//		width: 100%;
+//		top: 50%;
+//		left: 0;
+//		margin-top: -1px;
+//		background: $yellow;
+//	}
+//	&::before {
+//		@include transform(rotate(45deg));
+//	}
+//	&::after {
+//		@include transform(rotate(-45deg));
+//	}
+//}
 footer {
 	text-align: center;
 	margin-top: 100px;
@@ -316,20 +337,20 @@ footer {
 	}
 }
 
-.iframe-rwd  {
-	position: relative;
-	padding-bottom: 65.25%;
-	padding-top: 10px;
-	height: 0;
-	overflow: hidden;
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
+//.iframe-rwd  {
+//	position: relative;
+//	padding-bottom: 65.25%;
+//	padding-top: 10px;
+//	height: 0;
+//	overflow: hidden;
+//	iframe {
+//		position: absolute;
+//		top: 0;
+//		left: 0;
+//		width: 100%;
+//		height: 100%;
+//	}
+//}
 #wrapper {
 	overflow: hidden;
 }
@@ -359,6 +380,11 @@ footer {
 		span.hot-pink {
 			padding: 0 10px;
 			text-decoration: underline;
+		}
+	}
+	@include respond-to (normal-mobile){
+		.main-copywriter {
+			font-size: $xl-font;
 		}
 	}
 }
@@ -419,17 +445,15 @@ footer {
 //	}
 //}
 #main {
+	position: relative;
+	z-index: 2;
 	@include clearfix;
 	padding: 260px 0 ;
-//	height: 1000px;
 	background-image: url(../images/main_bg_top.png), url(../images/main_bg_bottom.png);
 	background-position: center top, center bottom;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-color: $white;
-//	@include respond-to (xlg-screen){
-//		background-size: initial;
-//	}
 	.plan {
 		text-align: center;
 		margin-bottom: 100px;
@@ -478,7 +502,7 @@ footer {
 			padding: 10px 0;
 			font-size: 18px;
 			text-align: left;
-			&.bold {
+			&.highlight {
 				font-size: 1.625em;
 				text-align: center;
 				padding: 30px 0 40px;
@@ -494,7 +518,7 @@ footer {
 		text-decoration: underline;
 		padding: 0 7px;
 		margin: 0 4px;
-		&:hover {
+		&:hover, &:focus {
 			background: $hot-pink;
 			color: $white;
 			text-decoration: none;
@@ -502,10 +526,18 @@ footer {
 			
 		}
 	}
+	@include respond-to (normal-mobile){
+		p {
+			font-size: 1.25em;
+		}
+	}
 }
 .item {
 	position: absolute;
 	opacity: .2;
+	@include respond-to (only-device){
+		display: none;
+	}
 }
 .item1, .item4, .item7 {
 	transform: scale(.7);
@@ -525,8 +557,14 @@ footer {
 	color: $purple;
 }
 .note-wrap {
-	&:nth-of-type(2) {
-		margin-bottom: 12px;
+	@include respond-to (only-desktop){
+		&.inline {
+			display: inline;
+			.note {
+				margin: 0;
+				padding: 0;
+			}
+		}
 	}
 }
 .note {
@@ -534,6 +572,14 @@ footer {
 	background-image: linear-gradient(rgba($yellow, 0) 44% , $yellow 45%);
 	margin: 0 4px;
 	padding: 0 4px;
+	&.main-note {
+		display: inline-block;
+	}
+	@include respond-to (normal-mobile){
+		&.main-note	{
+//			display: inline-block;
+		}
+	}
 }
 .note-sm {
 	display: inline;

@@ -3,7 +3,7 @@
 	
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
-		$('.toBottom').bind('click', function(event) {
+		$('a.toBottom').bind('click', function(event) {
 			var $anchor = $(this);
 			var nav = $($anchor.attr('href'));
 			if (nav.length) {

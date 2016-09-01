@@ -55,6 +55,15 @@ p > span {
   display: block;
 }
 
+@media only screen and (max-width: 480px) {
+  h3 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+}
 a {
   color: #e95385;
   -moz-transition: color, 0.5s, ease-in;
@@ -187,10 +196,14 @@ blockquote:before, blockquote:after {
 blockquote:before {
   left: -4.5%;
   top: 16%;
+  content: open-quote;
+  margin-right: 0.25em;
 }
 blockquote:after {
   right: -4.5%;
   bottom: -15%;
+  content: close-quote;
+  margin-left: 0.25em;
 }
 blockquote h2 {
   display: inline-block;
@@ -205,100 +218,26 @@ blockquote h2 span {
   text-align: right;
   line-height: 24px;
 }
-
-blockquote:before {
-  content: open-quote;
-  margin-right: 0.25em;
-}
-
-blockquote:after {
-  content: close-quote;
-  margin-left: 0.25em;
-}
-
-.modal {
-  position: absolute;
-  overflow-y: auto;
-  background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6FFFFFF,endColorstr=#E6FFFFFF);
-  zoom: 1;
-}
-.modal#video .modal-dialog {
-  width: 100%;
-  margin: 0;
-}
-.modal#video .modal-dialog .modal-body {
-  padding: 0;
-}
-.modal#video .modal-dialog .modal-content {
-  line-height: 0;
-}
-.modal .modal-dialog {
-  margin: 0 auto;
-}
-@media only screen and (min-width: 769px) {
-  .modal .modal-dialog {
-    width: 80%;
+@media only screen and (max-width: 480px) {
+  blockquote {
+    width: 90%;
   }
-}
-@media only screen and (max-width: 768px) {
-  .modal#video .modal-dialog {
-    margin: 30% 0;
+  blockquote:before, blockquote:after {
+    font-size: 3em;
   }
-}
-.modal .modal-content {
-  box-shadow: none;
-  border: 0;
-}
-.modal .modal-content .modal-body {
-  padding: 60px 20px 20px;
-}
-
-.close {
-  position: absolute;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  opacity: 1;
-  overflow: hidden;
-  display: inline-block;
-  z-index: 9999;
-  cursor: pointer;
-  top: 12px;
-  right: 12px;
-  background: #fff;
-}
-.close:hover {
-  background-color: transparent;
-  background-color: rgba(255, 241, 0, 0.2);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33FFF100,endColorstr=#33FFF100);
-  zoom: 1;
-}
-.close:hover::before, .close:hover::after {
-  background: #fff100;
-}
-.close::before, .close::after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  margin-top: -1px;
-  background: #fff100;
-}
-.close::before {
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.close::after {
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  blockquote:before {
+    top: 13%;
+  }
+  blockquote:after {
+    bottom: -2%;
+  }
+  blockquote h2 {
+    font-size: 1.35em;
+  }
+  blockquote h2 span {
+    font-size: 18px;
+    line-height: 32px;
+  }
 }
 
 footer {
@@ -310,21 +249,6 @@ footer h2 {
   background: #e95385;
   line-height: 178px;
   margin: 0;
-}
-
-.iframe-rwd {
-  position: relative;
-  padding-bottom: 65.25%;
-  padding-top: 10px;
-  height: 0;
-  overflow: hidden;
-}
-.iframe-rwd iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 #wrapper {
@@ -358,8 +282,15 @@ footer h2 {
   padding: 0 10px;
   text-decoration: underline;
 }
+@media only screen and (max-width: 480px) {
+  #intro .main-copywriter {
+    font-size: 1.25em;
+  }
+}
 
 #main {
+  position: relative;
+  z-index: 2;
   *zoom: 1;
   padding: 260px 0;
   background-image: url(../images/main_bg_top.png), url(../images/main_bg_bottom.png);
@@ -425,7 +356,7 @@ footer h2 {
   font-size: 18px;
   text-align: left;
 }
-#main .plan-content p.bold {
+#main .plan-content p.highlight {
   font-size: 1.625em;
   text-align: center;
   padding: 30px 0 40px;
@@ -440,16 +371,26 @@ footer h2 {
   padding: 0 7px;
   margin: 0 4px;
 }
-#main .toBottom:hover {
+#main .toBottom:hover, #main .toBottom:focus {
   background: #e95385;
   color: #fff;
   text-decoration: none;
   padding: 3px 7px;
 }
+@media only screen and (max-width: 480px) {
+  #main p {
+    font-size: 1.25em;
+  }
+}
 
 .item {
   position: absolute;
   opacity: .2;
+}
+@media only screen and (max-width: 768px) {
+  .item {
+    display: none;
+  }
 }
 
 .item1, .item4, .item7 {
@@ -472,8 +413,14 @@ footer h2 {
   color: #7872ad;
 }
 
-.note-wrap:nth-of-type(2) {
-  margin-bottom: 12px;
+@media only screen and (min-width: 769px) {
+  .note-wrap.inline {
+    display: inline;
+  }
+  .note-wrap.inline .note {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .note {
@@ -481,6 +428,9 @@ footer h2 {
   background-image: linear-gradient(rgba(255, 241, 0, 0) 44%, #fff100 45%);
   margin: 0 4px;
   padding: 0 4px;
+}
+.note.main-note {
+  display: inline-block;
 }
 
 .note-sm {
