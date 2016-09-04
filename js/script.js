@@ -1,6 +1,4 @@
-
-(function ($) {
-	
+(function ($) {	
 	//jQuery for page scrolling feature - requires jQuery Easing plugin
 	$(function() {
 		$('a.toBottom').bind('click', function(event) {
@@ -20,7 +18,7 @@
 
 jQuery(function($) {
     var $win = $(window),
-        $item = $('.item'),
+        $item = $('.item-paralax'),
         itemArray = [];
 
     $item.each(function(i) {
@@ -37,7 +35,7 @@ jQuery(function($) {
             my: from.top != undefined ? to.top - from.top : 0,
             mw: from.width != undefined ? to.width - from.width : 0,
             mh: from.height != undefined ? to.height - from.height : 0,
-//            mo: from.opacity != undefined ? to.opacity - from.opacity : 0,
+            mo: from.opacity != undefined ? to.opacity - from.opacity : 0,
             w: $this.width(),
             h: $this.height(),
             from: from,
@@ -57,9 +55,21 @@ jQuery(function($) {
                 left: Math.floor(p.from.left + p.mx * mr),
                 top: Math.floor(p.from.top + p.my * mr),
                 width: p.from.width != undefined ? p.from.width + p.mw * mr : p.w,
-                height: p.from.height != undefined ? p.from.height + p.mh * mr : p.h
-//                op‘‘“‘“acity: p.from.opacity != undefined ? p.from.opacity + p.mo * mr : 1
+                height: p.from.height != undefined ? p.from.height + p.mh * mr : p.h,
+                opacity: p.from.opacity != undefined ? p.from.opacity + p.mo * mr : 1
             });
         }
     }).trigger('scroll');
+});
+
+$(".carousel").swipe({
+
+  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+  },
+  allowPageScroll:"vertical"
+
 });

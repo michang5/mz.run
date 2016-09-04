@@ -19,7 +19,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/global.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:400,700,800" rel="stylesheet">
 	<!--[if lt IE 9]>
 		<script type="text/javascript" src="js/html5shiv.min.js" ></script>
 		<script type="text/javascript" src="js/respond.min.js"></script>
@@ -29,16 +29,16 @@
 	
 	<!-- Intro Section -->
 	<div id="intro" class="parallax-wrap">
-		<img src="images/wireframe_01.png" class="item item1" data-scroll='{"start":10,"end":1200}' data-from='{"top":60,"left":400}' data-to='{"top":0,"left":400}'>
-		<img src="images/wireframe_02.png" class="item item2" data-scroll='{"start":10,"end":1200}' data-from='{"top":30,"left":800}' data-to='{"top":-220,"left":800}'>
-		<img src="images/wireframe_03.png" class="item item3" data-scroll='{"start":10,"end":1200}' data-from='{"top":290,"right":-60}' data-to='{"top":1080,"right":-60}'>
-		<img src="images/wireframe_04.png" class="item item4" data-scroll='{"start":10,"end":1200}' data-from='{"top":590,"right":120}' data-to='{"top":320,"right":120}'>
+		<img src="images/wireframe_01.png" class="item-paralax item1" data-scroll='{"start":10,"end":1200}' data-from='{"top":60,"left":400}' data-to='{"top":0,"left":400}'>
+		<img src="images/wireframe_02.png" class="item-paralax item2" data-scroll='{"start":10,"end":1200}' data-from='{"top":30,"left":800}' data-to='{"top":-220,"left":800}'>
+		<img src="images/wireframe_03.png" class="item-paralax item3" data-scroll='{"start":10,"end":1200}' data-from='{"top":290,"right":-60}' data-to='{"top":1080,"right":-60}'>
+		<img src="images/wireframe_04.png" class="item-paralax item4" data-scroll='{"start":10,"end":1200}' data-from='{"top":590,"right":120}' data-to='{"top":320,"right":120}'>
 
-		<img src="images/wireframe_05.png" class="item item5" data-scroll='{"start":10,"end":1200}' data-from='{"top":390,"left":-60}' data-to='{"top":820,"left":-60}'>
-		<img src="images/wireframe_06.png" class="item item6" data-scroll='{"start":10,"end":1200}' data-from='{"top":120,"left":20}' data-to='{"top":1080,"left":20}'>
-		<img src="images/wireframe_07.png" class="item item7" data-scroll='{"start":10,"end":1200}' data-from='{"top":290,"right":460}' data-to='{"top":20,"right":460}'>
-		<img src="images/wireframe_08.png" class="item item8" data-scroll='{"start":10,"end":1200}' data-from='{"top":890,"right":10}' data-to='{"top":1200,"right":10}'>
-		<img src="images/wireframe_09.png" class="item item9" data-scroll='{"start":10,"end":1200}' data-from='{"top":810,"left":120}' data-to='{"top":120,"left":120}'>
+		<img src="images/wireframe_05.png" class="item-paralax item5" data-scroll='{"start":10,"end":1200}' data-from='{"top":390,"left":-60}' data-to='{"top":820,"left":-60}'>
+		<img src="images/wireframe_06.png" class="item-paralax item6" data-scroll='{"start":10,"end":1200}' data-from='{"top":120,"left":20}' data-to='{"top":1080,"left":20}'>
+		<img src="images/wireframe_07.png" class="item-paralax item7" data-scroll='{"start":10,"end":1200}' data-from='{"top":290,"right":460}' data-to='{"top":20,"right":460}'>
+		<img src="images/wireframe_08.png" class="item-paralax item8" data-scroll='{"start":10,"end":1200}' data-from='{"top":890,"right":10}' data-to='{"top":1200,"right":10}'>
+		<img src="images/wireframe_09.png" class="item-paralax item9" data-scroll='{"start":10,"end":1200}' data-from='{"top":810,"left":120}' data-to='{"top":120,"left":120}'>
 		<div class="container text-center copywriting">
 			<h1><img src="images/MZUIUX_designstudio.png" alt="MZ UIUX Design Studio" title="MZ UIUX Design Studio" class="img-responsive"></h1>
 			<blockquote>
@@ -53,10 +53,15 @@
 						Mi
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>
 					</span>
-					<ul class="dropdown-menu">
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
+					<ul class="dropdown-menu team1">
+						<img src="images/mi.jpg" alt="MZ UIUX Digital" title="MZ UIUX Digital" class="team">
+						<ul class="team-info">
+							<h4 class="green">Mi - UI Designer</h4>
+							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+						
 					</ul>
 				</div>
 				<span>與</span>
@@ -65,15 +70,20 @@
 						Zac
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>
 					</span>
-					<ul class="dropdown-menu">
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
+					<ul class="dropdown-menu team2">
+						<img src="images/zac.jpg" alt="MZ UIUX Digital" title="MZ UIUX Digital" class="team">
+						<ul class="team-info">
+							<h4 class="green">Zac - UX Architect</h4>
+							<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						</ul>
+						
 					</ul>
 				</div>
 				<span style="display: block">
-					擁有企業管理、設計創新管理、數位製作企劃、平面 / 數位設計的背景 <br>
-					與超過十年的網路 / 行動應用專案的參與經驗 <br>
+					擁有企業管理、設計創新管理、<span class="mobile-block">數位製作企劃、平面 / 數位設計的背景 </span>
+					<span class="block">與超過十年的網路 / 行動應用專案的參與經驗 </span>
 					目前專注於：<br>
 					協助<span class="hot-pink">數位產品團隊</span>在<span class="hot-pink">使用者介面/體驗（UIUX）</span>的領域中<span class="hot-pink">取得突破</span>
 				</span>
@@ -82,6 +92,10 @@
 	</div>
 
 	<div id="main">
+		<img src="images/bg_yellow.png" class="item-paralax item10" data-scroll='{"start":400,"end":1200}' data-from='{"top":100,"right":0}' data-to='{"top":920,"right":0}'>
+		<img src="images/bg_mz_1.png" class="item-paralax item11" data-scroll='{"start":400,"end":1200}' data-from='{"top":-100,"right":0}' data-to='{"top":920,"right":0}'>
+		<img src="images/bg_green.png" class="item-paralax item12" data-scroll='{"start":400,"end":1600}' data-from='{"top":320,"left":0}' data-to='{"top":0,"left":0}'>
+		<img src="images/bg_mz_2.png" class="item-paralax item13" data-scroll='{"start":400,"end":1600}' data-from='{"top":620,"left":0}' data-to='{"top":120,"left":0}'>
 		<div class="">
 			<h3>主要服務項目有</h3>
 			<div class="plan">
@@ -90,7 +104,7 @@
 				<p>
 					<span class="note-wrap inline">
 						<span class="note">
-							在最主要的使用流程上，
+							在最主要的使用流程上<span class="hidden-xs">，</span>
 						</span>
 					</span>
 					<span class="note-wrap inline">
@@ -105,7 +119,10 @@
 						</span>
 					</span>
 					<span>
-						我們能善用數據分析、使用者研究方法，與創意思考
+						我們能善用數據分析<span class="hidden-xs">、</span>
+						<span class="mobile-block">
+							使用者研究方法，與創意思考
+						</span>
 					</span>
 					<span>
 						為您有根據地找出突破僵局的可行改版方案
@@ -135,9 +152,8 @@
 							<span>如果您認同我們的邏輯與價值，歡迎利用下方<a class="toBottom" href="#contact">聊聊產品</a>按鈕，讓我們一起了解您的產品與疑問。</span>
 						</p>
 						<button type="button" class="btn btn-primary btn-md btn-minus" data-toggle="collapse" data-target="#plan-1">
-					
-					<span class="minus"></span>
-				</button>
+							<span class="minus"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -161,7 +177,7 @@
 						</span>
 					</span>
 					<span>
-						我們能主導連續一貫、統計嚴謹的二擇一（多擇一）測試
+						我們能主導連續一貫<span class="hidden-xs">、</span><span class="mobile-block">統計嚴謹的二擇一（多擇一）測試</span>
 					</span>
 					<span>
 						科學地步步推進您所關心的關鍵數據
@@ -200,7 +216,7 @@
 				<p>
 					<span class="note-wrap">
 						<span class="note">
-							已經對最新版產品的功能與流程感到滿意，
+							已經對最新版產品的功能與流程感到滿意<span class="hidden-xs">，</span>
 						</span>
 					</span>
 					<span class="note-wrap">
@@ -209,13 +225,13 @@
 						</span>
 					</span>
 					<span>
-						我們能為您拆解指定對手的設計元素，
+						我們能為您拆解指定對手的設計元素<span class="hidden-xs">，</span>
 					</span>
 					<span>
-						逐項挑剔演進成自己的風格指南。
+						逐項挑剔演進成自己的風格指南<span class="hidden-xs">。</span>
 					</span>
 					<span>
-						讓您有系統地在美感上取得優勢。
+						讓您有系統地在美感上取得優勢<span class="hidden-xs">。</span>
 					</span>
 				</p>
 				<h4>依產品規模＆<br>
@@ -251,6 +267,44 @@
 		</div>
 	</div>
 
+	<div id="clients" class="container">
+		<h3>客戶與同事這麼說</h3>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="http://fakeimg.pl/100/" alt="">
+					<blockquote>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+					</blockquote>
+				</div>
+
+				<div class="item">
+					<img src="http://fakeimg.pl/100/" alt="">
+					<blockquote>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+					</blockquote>
+				</div>
+
+				<div class="item">
+					<img src="http://fakeimg.pl/100/" alt="">
+					<blockquote>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+					</blockquote>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
 	<footer id="contact">
 		<h2>聊聊你的產品</h2>
 	</footer>
@@ -258,7 +312,8 @@
 	<!--jQuery--> 
 	<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>	
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
 </body>
