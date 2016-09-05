@@ -353,10 +353,23 @@ footer {
 	text-align: center;
 	margin-top: 100px;
 	h2 {
-		color: $white;
-		background: $hot-pink;
-		line-height: 178px;
+		
+		
+		
 		margin: 0;
+		a {
+			color: $white;
+			display: block;
+			line-height: 178px;
+			background: $hot-pink;
+			&:hover {
+				color: $white;
+				background: $green;
+			}
+		}
+	}
+	i {
+		margin-left: 10px;
 	}
 }
 
@@ -626,7 +639,7 @@ footer {
 .item3, .item6, .item9 {
 	transform: scale(.9);
 }
-.item10, .item11, .item12, .item13 {
+.item10, .item11, .item12, .item13, .item14 {
 	width: 36%;
 	opacity: 1!important;
 	@include respond-to (md-screen){
@@ -644,12 +657,12 @@ footer {
 }
 
 #clients {
+	margin: 40px auto;
 	.carousel {
 		width: 80%;
 		margin: 0 auto;
 		.item {
 			text-align: center;
-			
 		}
 	}
 	blockquote {
@@ -665,7 +678,7 @@ footer {
 			top: 0;
 		}
 		&:after {
-			bottom: -5%;
+			bottom: auto;
 		}
 	}
 	.carousel-inner > .item > img, .carousel-inner > .item > a > img {
@@ -676,6 +689,20 @@ footer {
 		height: 100px;
 		border-radius: 100%;
 	}
+	.carousel-indicators {
+		bottom: -50px;
+		.active {
+			background-color: $hot-pink;
+			
+		}
+		li {
+			border-color: $hot-pink;
+			background-color: $white;
+		}
+	}
+}
+#instagram {
+	margin: 120px 0;
 }
 //style
 .hot-pink {
