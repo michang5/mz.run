@@ -23,6 +23,11 @@ body {
 	background: $light-gray;
 	color: $dark;
 	overflow-x: hidden;
+	
+}
+@include selection {
+	color: $white; 
+	background: $green;
 }
 //h-style
 h1, h2, h3, h4, h5, h6 {
@@ -79,6 +84,7 @@ a {
 		text-decoration: none;
 	}
 }
+
 .clearfix {
 	@include clearfix;
 }
@@ -214,7 +220,7 @@ ul, li {
 blockquote {
 	display: inline-block;
 	width: 65%;
-	color: $green;
+	color: $yellow;
 	padding: 0.5em 10px;
 	quotes: "\201C""\201D""\2018""\2019";
 	text-align: left;
@@ -247,7 +253,8 @@ blockquote {
 			font-size: 24px;
 			display: block;
 			text-align: right;
-			line-height: 24px;
+			line-height: 40px!important;
+			font-weight: normal!important;
 		}
 	}
 	@include respond-to (normal-mobile){
@@ -392,11 +399,16 @@ footer {
 }
 #intro {
 	padding-bottom: 50px;
+	&.parallax {
+		background: url(../images/intro_bg.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}
 	h1 {
 		margin: 0;
 	}
 	h2 {
 		margin-top: 10px;
+		color: $yellow;
 	}
 	.img-responsive {
 		margin: 0 auto;
@@ -404,19 +416,20 @@ footer {
 	.dropdown {
 		display: inline;
 		.dropdown-toggle {
-			color: $green;
+			color: $yellow;
 			cursor: pointer;
 		}
 	}
 	.copywriting {
 		position: relative;
 		z-index: 2;
+		color: $white;
 	}
 	.main-copywriter {
 		font-size: 1.625em;
-		span.hot-pink {
-			padding: 0 10px;
-			text-decoration: underline;
+		span.yellow {
+			padding: 0 6px;
+			
 		}
 	}
 	.dropdown-menu {
@@ -463,29 +476,44 @@ footer {
 				text-align: center;
 				margin-right: 4px;
 				transition: all .3s;
-				a {
-					display: block;
-					color: $white;
-				}
-				&:nth-of-type(1){
-					background: #1769ff;
-				}
-				&:nth-of-type(2){
-					background: #e1306c;
-				}
-				&:nth-of-type(3){
+				&.twitter{
 					background: #1da1f2;
+				}
+				&.linkedin{
+					background: #0077b5;
+				}
+				&.behance{
+					background: #1769ff;
 				}
 				&:hover, &:active, &:focus {
 					box-shadow: 0 3px 10px rgba($dark,.4);
 					width: 40px;
+				}
+				a {
+					display: block;
+					color: $white;
 				}
 			}
 			
 		}
 	}
 	@include respond-to (normal-mobile){
+//		background: url('../images/wireframe_01.png') no-repeat center 40px;
+		
 		padding-bottom: 10px;
+		&:before {
+			content: ' ';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			opacity: 0.2;
+			background: url('../images/wireframe_01.png') no-repeat center 0px;
+			background-size: 76%;
+		}
 		h1 {
 			width: 80%;
 			margin: 0 auto;
@@ -515,8 +543,8 @@ footer {
 	position: relative;
 	z-index: 2;
 	@include clearfix;
-	padding: 60px 0;
-	margin: 60px 0;
+	padding: 60px 0 0;
+	margin-bottom: 60px;
 	background: $white;
 	box-shadow: 0 0 80px rgba($dark,.3), 0 0 50px rgba($dark,.2);
 	.plan {
@@ -524,6 +552,9 @@ footer {
 		margin-bottom: 100px;
 		position: relative;
 		z-index: 3;
+		&:nth-of-type(3) {
+//			margin-bottom: 0;
+		}
 	}
 	h2, h5 {
 		color: $purple;
@@ -539,6 +570,9 @@ footer {
 	h4 {
 		margin-top: 20px;
 		margin-bottom: 0;
+		span {
+			font-size: 15px;
+		}
 	}
 	p.price {
 		margin: 10px 0;
@@ -555,38 +589,134 @@ footer {
 		margin: 0 0 10px;
 	}
 	#plan-3 {
-		margin-bottom: 300px;
+		margin-bottom: -100px;
 	}
 	.plan-content {
 		width: 100%;
-		padding: 60px 10% 0;
-		box-shadow: 0 30px 50px rgba($dark,.2), inset 0 30px 30px rgba($dark,.2);
+		padding-top: 60px;
+		box-shadow: 0 10px 30px rgba($dark,.4), 0 30px 50px rgba($dark,.2), inset 0 30px 30px rgba($dark,.2);
+		.note-block {
+			width: 100%;
+			margin: 20px auto;
+//			padding: 30px 50px;
+			font-style: italic;
+			background: $white;
+			box-shadow: 0 0 10px rgba($dark,.2);
+			.card-img {
+				width: 30%;
+				float: left;
+			}
+			.card-p {
+				width: 65%;
+				float: left;
+			}
+			p {
+				color: $purple;
+				padding: 20px;
+				text-align: left;
+				margin: 0;
+			}
+		}
 		p {
 			text-align: justify;
 			padding: 10px 0;
 			font-size: 18px;
+//			&.highlight {
+//				font-size: 1.625em;
+//				text-align: center;
+//				padding: 30px 0 40px;
+//			}
+			.line-through {
+				text-decoration: line-through;
+				display: inline;
+			}
+		}
+	}
+	.plan-highlight {
+		h3 {
 			&.highlight {
-				font-size: 1.625em;
-				text-align: center;
-				padding: 30px 0 40px;
+				color: $white;
+				font-size: 2em;
+				padding: 50px 0;
+				span {
+					display: block;
+				}
 			}
-			&.note-block {
-				padding: 30px 50px;
-				color: $purple;
-				font-style: italic;
-			}
+		}
+		&.plan1 {
+			background: url(../images/plan1_bg.jpg) no-repeat center center fixed;
+			background-size: cover;
 		}
 	}
 	.toBottom {
 		text-decoration: underline;
-		padding: 0 7px;
-		margin: 0 4px;
+		padding: 3px 12px;
+		margin: 0 10px;
 		&:hover, &:focus {
 			background: $hot-pink;
 			color: $white;
-			text-decoration: none;
-			padding: 3px 7px;
-			
+			text-decoration: none;	
+		}
+	}
+	@include respond-to (xlg-screen){
+		.plan-content {
+			.note-block {
+				.card-img {
+					width: 28%;
+				}
+				.card-p {
+					width: 70%;
+				}
+			}
+		}
+	}
+//	@include respond-to (xxlg-screen){
+//		.plan-content {
+//			.note-block {
+//				width: 80%;
+//				.card-img {
+//					width: 20%;
+//				}
+//				.card-p {
+//					width: 80%;
+//				}
+//			}
+//		}
+//	}
+	@include respond-to (lg-screen){
+		.plan-content {
+			.note-block {
+				.card-img {
+					width: 42%;
+				}
+				.card-p {
+					width: 58%;
+				}
+			}
+		}
+	}
+	@include respond-to (md-screen){
+		.plan-content {
+			.note-block {
+				.card-img {
+					width: 100%;
+				}
+				.card-p {
+					width: 100%;
+				}
+			}
+		}
+	}
+	@include respond-to (only-device){
+		.plan-content {
+			.note-block {
+				.card-img {
+					width: 100%;
+				}
+				.card-p {
+					width: 100%;
+				}
+			}
 		}
 	}
 	@include respond-to (normal-mobile){
@@ -641,6 +771,7 @@ footer {
 }
 .item10, .item11, .item12, .item13, .item14 {
 	width: 36%;
+	height: auto!important;
 	opacity: 1!important;
 	@include respond-to (md-screen){
 		width: 26%;
@@ -648,6 +779,9 @@ footer {
 	@include respond-to (only-device){
 		width: 20%;
 	}
+}
+.item14 {
+	width: 30%;
 }
 .item-square {
 	position: absolute;
@@ -657,6 +791,8 @@ footer {
 }
 
 #clients {
+	position: relative;
+	z-index: 2;
 	margin: 40px auto;
 	.carousel {
 		width: 80%;
@@ -700,6 +836,15 @@ footer {
 			background-color: $white;
 		}
 	}
+	@include respond-to (normal-mobile){
+		.carousel {
+			width: 90%;
+			blockquote {
+				width: 90%;
+				margin-left: 0;
+			}
+		}
+	}
 }
 #instagram {
 	margin: 120px 0;
@@ -710,6 +855,9 @@ footer {
 }
 .purple {
 	color: $purple;
+}
+.yellow {
+	color: $yellow;
 }
 .note-wrap {
 	@include respond-to (only-desktop){
@@ -734,6 +882,26 @@ footer {
 		&.main-note	{
 //			display: inline-block;
 		}
+	}
+}
+.full-width {
+	width: 100%;
+}
+.left-img {
+	float: left;
+	width: 30%;
+	margin-left: -10%;
+}
+figure {
+	text-align: center;
+	margin: 18px auto;
+	img {
+		max-width: 100%;
+		display: inline-block;
+	}
+	figcaption {
+		font-style: italic;
+		color: $gray;
 	}
 }
 .note-sm {
@@ -766,5 +934,3 @@ footer {
 		display: block;
 	}
 }
-
-
