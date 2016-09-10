@@ -32,6 +32,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0;
   line-height: 1.8;
+  font-family: 'Roboto', "source-han-sans-traditional", sans-serif;
 }
 
 button:hover {
@@ -42,7 +43,7 @@ button:hover {
 }
 
 h1, h2, h3 {
-  font-weight: 900;
+  font-weight: bold;
 }
 
 h2 {
@@ -85,6 +86,11 @@ p > span {
 
   p {
     font-size: 1.2em;
+  }
+}
+@media only screen and (max-width: 320px) {
+  h3 {
+    line-height: 1.25;
   }
 }
 a {
@@ -261,10 +267,10 @@ blockquote h2 span {
 }
 @media only screen and (max-width: 480px) {
   blockquote {
-    width: 92%;
+    width: 90%;
   }
   blockquote:before, blockquote:after {
-    font-size: 3em;
+    font-size: 2.8em;
   }
   blockquote:before {
     top: 13%;
@@ -276,30 +282,29 @@ blockquote h2 span {
     font-size: 1.35em;
   }
   blockquote h2 span {
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 22px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  blockquote {
+    width: 98%;
+  }
+  blockquote h2 span {
+    font-size: 13px;
   }
 }
 
 footer {
   text-align: center;
-  margin-top: 100px;
-}
-footer h2 {
-  margin: 0;
-}
-footer h2 a {
-  color: #fff;
-  display: block;
-  line-height: 178px;
-  background: #e95385;
-}
-footer h2 a:hover {
+  padding: 40px 0;
   color: #fff;
   background: #66c3c2;
 }
-footer i {
-  margin-left: 10px;
+@media only screen and (max-width: 480px) {
+  footer {
+    line-height: 1.25;
+  }
 }
 
 #wrapper {
@@ -308,9 +313,10 @@ footer i {
 
 #intro {
   padding-bottom: 50px;
+  margin-bottom: 0 !important;
 }
 #intro.parallax {
-  background: url(../images/intro_bg.jpg) no-repeat center center fixed;
+  background: url(../images/intro_bg.jpg) no-repeat center top fixed;
   background-size: cover;
 }
 #intro h1 {
@@ -321,7 +327,7 @@ footer i {
   color: #fff100;
 }
 #intro .img-responsive {
-  margin: 0 auto;
+  margin: 16px auto 0;
 }
 #intro .dropdown {
   display: inline;
@@ -406,20 +412,11 @@ footer i {
 }
 @media only screen and (max-width: 480px) {
   #intro {
-    padding-bottom: 10px;
+    min-height: 100%;
+    padding-bottom: 40px;
   }
-  #intro:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.2;
-    background: url("../images/wireframe_01.png") no-repeat center 0px;
-    background-size: 76%;
+  #intro.parallax {
+    background-size: auto;
   }
   #intro h1 {
     width: 80%;
@@ -439,6 +436,11 @@ footer i {
   }
   #intro .dropdown-menu.team2:before {
     left: 220px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #intro .main-copywriter {
+    font-size: 1em;
   }
 }
 
@@ -556,7 +558,7 @@ footer i {
 }
 #main .toBottom {
   text-decoration: underline;
-  padding: 3px 12px;
+  padding: 3px 10px;
   margin: 0 10px;
 }
 #main .toBottom:hover, #main .toBottom:focus {
@@ -598,8 +600,8 @@ footer i {
 }
 @media only screen and (max-width: 480px) {
   #main {
-    margin-top: 30px;
     padding-top: 30px;
+    margin-top: 0 !important;
   }
   #main p.price {
     font-size: 1.2em;
@@ -623,6 +625,10 @@ footer i {
   }
   #main .plan-content p.note-block {
     padding: 20px;
+  }
+  #main .plan-highlight h3.highlight {
+    font-size: 1.4em;
+    padding-bottom: 10px;
   }
 }
 
@@ -651,24 +657,24 @@ footer i {
   transform: scale(0.9);
 }
 
-.item10, .item11, .item12, .item13, .item14 {
+.item10, .item11, .item12, .item13, .item14, .item15 {
   width: 36%;
   height: auto !important;
   opacity: 1 !important;
 }
 @media only screen and (min-width: 769px) and (max-width: 991px) {
-  .item10, .item11, .item12, .item13, .item14 {
+  .item10, .item11, .item12, .item13, .item14, .item15 {
     width: 26%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .item10, .item11, .item12, .item13, .item14 {
+  .item10, .item11, .item12, .item13, .item14, .item15 {
     width: 20%;
   }
 }
 
-.item14 {
-  width: 30%;
+.item14, .item15 {
+  width: 26%;
 }
 
 .item-square {
@@ -692,15 +698,19 @@ footer i {
 #clients .carousel .item {
   text-align: center;
 }
+#clients h4 {
+  color: #7872ad;
+}
 #clients blockquote {
   display: inline-block;
   vertical-align: top;
-  width: 70%;
+  width: 86%;
   padding: 0;
   margin-left: 30px;
-  color: #3b4d4f;
+  color: #777;
   vertical-align: top;
   padding-left: 10px;
+  text-shadow: 0 0 2px #f1f2f2, 0 0 4px #f1f2f2, 0 0 2px #f1f2f2, 0 0 4px #f1f2f2;
 }
 #clients blockquote:before {
   top: 0;
@@ -711,7 +721,7 @@ footer i {
 #clients .carousel-inner > .item > img, #clients .carousel-inner > .item > a > img {
   display: inline-block;
   vertical-align: top;
-  border: 3px solid #66c3c2;
+  border: 3px solid #7872ad;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -737,7 +747,15 @@ footer i {
 }
 
 #instagram {
-  margin: 120px 0;
+  margin-top: 80px;
+  *zoom: 1;
+}
+#instagram:after, #instagram:before {
+  content: "";
+  display: table;
+}
+#instagram:after {
+  clear: both;
 }
 
 .hot-pink {
@@ -785,6 +803,7 @@ footer i {
 figure {
   text-align: center;
   margin: 18px auto;
+  padding: 0;
 }
 figure img {
   max-width: 100%;
@@ -827,4 +846,32 @@ figure figcaption {
   .mobile-block {
     display: block;
   }
+}
+
+#instafeed {
+  width: 100%;
+}
+#instafeed a {
+  display: block;
+  float: left;
+  position: relative;
+  width: 25%;
+}
+#instafeed a img {
+  display: block;
+  width: 100%;
+}
+@media only screen and (min-width: 1600px) {
+  #instafeed a {
+    width: 12.5%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #instafeed a {
+    width: 50%;
+  }
+}
+
+#bottom {
+  position: relative;
 }

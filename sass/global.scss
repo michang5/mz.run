@@ -34,12 +34,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 0;
 	line-height: 1.8;
+	font-family: 'Roboto', "source-han-sans-traditional", sans-serif;
 }
 button:hover {
 	@include transition(color, .5s, ease-in);
 }
 h1, h2, h3 {
-	font-weight: 900;
+	font-weight: bold;
 }
 h1 {
 }
@@ -76,6 +77,11 @@ p {
 	}
 	p {
 		font-size: 1.2em;
+	}
+}
+@include respond-to (xxs-mobile){
+	h3 {
+		line-height: 1.25;
 	}
 }
 a {
@@ -259,9 +265,9 @@ blockquote {
 		}
 	}
 	@include respond-to (normal-mobile){
-		width: 92%;
+		width: 90%;
 		&:before , &:after {
-			font-size: 3em;
+			font-size: 2.8em;
 		}
 		&:before {
 			top: 13%;
@@ -272,8 +278,16 @@ blockquote {
 		h2 {
 			font-size: 1.35em;
 			span {
-				font-size: 18px;
-				line-height: 32px;
+				font-size: 16px;
+				line-height: 22px!important;
+			}
+		}
+	}
+	@include respond-to (xxs-mobile){
+		width: 98%;
+		h2 {
+			span {
+				font-size: 13px;
 			}
 		}
 	}
@@ -359,49 +373,22 @@ blockquote {
 //}
 footer {
 	text-align: center;
-	margin-top: 100px;
-	h2 {
-		
-		
-		
-		margin: 0;
-		a {
-			color: $white;
-			display: block;
-			line-height: 178px;
-			background: $hot-pink;
-			&:hover {
-				color: $white;
-				background: $green;
-			}
-		}
-	}
-	i {
-		margin-left: 10px;
+	padding: 40px 0;
+	color: $white;
+	background: $green;
+	@include respond-to (normal-mobile){
+		line-height: 1.25;
 	}
 }
 
-//.iframe-rwd  {
-//	position: relative;
-//	padding-bottom: 65.25%;
-//	padding-top: 10px;
-//	height: 0;
-//	overflow: hidden;
-//	iframe {
-//		position: absolute;
-//		top: 0;
-//		left: 0;
-//		width: 100%;
-//		height: 100%;
-//	}
-//}
 #wrapper {
 	overflow: hidden;
 }
 #intro {
 	padding-bottom: 50px;
+	margin-bottom: 0!important;
 	&.parallax {
-		background: url(../images/intro_bg.jpg) no-repeat center center fixed;
+		background: url(../images/intro_bg.jpg) no-repeat center top fixed;
 		background-size: cover;
 	}
 	h1 {
@@ -412,7 +399,7 @@ footer {
 		color: $yellow;
 	}
 	.img-responsive {
-		margin: 0 auto;
+		margin: 16px auto 0;
 	}
 	.dropdown {
 		display: inline;
@@ -500,19 +487,24 @@ footer {
 	@include respond-to (normal-mobile){
 //		background: url('../images/wireframe_01.png') no-repeat center 40px;
 		
-		padding-bottom: 10px;
-		&:before {
-			content: ' ';
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-			opacity: 0.2;
-			background: url('../images/wireframe_01.png') no-repeat center 0px;
-			background-size: 76%;
+//		padding-bottom: 10px;
+//		&:before {
+//			content: ' ';
+//			display: block;
+//			position: absolute;
+//			left: 0;
+//			top: 0;
+//			width: 100%;
+//			height: 100%;
+//			z-index: 1;
+//			opacity: 0.2;
+//			background: url('../images/wireframe_01.png') no-repeat center 0px;
+//			background-size: 76%;
+//		}
+		min-height: 100%;
+		padding-bottom: 40px;
+		&.parallax {
+			background-size: auto;
 		}
 		h1 {
 			width: 80%;
@@ -534,6 +526,11 @@ footer {
 					left: 220px;
 				}
 			}
+		}
+	}
+	@include respond-to (xxs-mobile){
+		.main-copywriter {
+			font-size: 1em;
 		}
 	}
 }
@@ -658,7 +655,7 @@ footer {
 	}
 	.toBottom {
 		text-decoration: underline;
-		padding: 3px 12px;
+		padding: 3px 10px;
 		margin: 0 10px;
 		&:hover, &:focus {
 			background: $hot-pink;
@@ -728,10 +725,8 @@ footer {
 		}
 	}
 	@include respond-to (normal-mobile){
-//		background: $white url(../images/bg_mz_1.png) 20% center no-repeat;
-//		background-size: 50%;
-		margin-top: 30px;
 		padding-top: 30px;
+		margin-top: 0!important;
 		p.price {
 			font-size: 1.2em;
 			span {
@@ -755,7 +750,14 @@ footer {
 				}
 			}
 		}
-		
+		.plan-highlight {
+			h3 {
+				&.highlight {
+					font-size: 1.4em;
+					padding-bottom: 10px;
+				}
+			}
+		}
 	}
 }
 .item-paralax {
@@ -777,7 +779,7 @@ footer {
 .item3, .item6, .item9 {
 	transform: scale(.9);
 }
-.item10, .item11, .item12, .item13, .item14 {
+.item10, .item11, .item12, .item13, .item14, .item15 {
 	width: 36%;
 	height: auto!important;
 	opacity: 1!important;
@@ -788,8 +790,8 @@ footer {
 		width: 20%;
 	}
 }
-.item14 {
-	width: 30%;
+.item14, .item15 {
+	width: 26%;
 }
 .item-square {
 	position: absolute;
@@ -809,15 +811,19 @@ footer {
 			text-align: center;
 		}
 	}
+	h4 {
+		color: $purple;
+	}
 	blockquote {
 		display: inline-block;
 		vertical-align: top;
-		width: 70%;
+		width: 86%;
 		padding: 0;
 		margin-left: 30px;
-		color: $dark;
+		color: $gray;
 		vertical-align: top;
 		padding-left: 10px;
+		text-shadow: 0 0 2px $light-gray, 0 0 4px $light-gray,0 0 2px $light-gray, 0 0 4px $light-gray;
 		&:before {
 			top: 0;
 		}
@@ -828,7 +834,7 @@ footer {
 	.carousel-inner > .item > img, .carousel-inner > .item > a > img {
 		display: inline-block;
 		vertical-align: top;
-		border: 3px solid $green;
+		border: 3px solid $purple;
 		width: 100px;
 		height: 100px;
 		border-radius: 100%;
@@ -855,7 +861,9 @@ footer {
 	}
 }
 #instagram {
-	margin: 120px 0;
+	margin-top: 80px;
+	
+	@include clearfix;
 }
 //style
 .hot-pink {
@@ -903,6 +911,7 @@ footer {
 figure {
 	text-align: center;
 	margin: 18px auto;
+	padding: 0;
 	img {
 		max-width: 100%;
 		display: inline-block;
@@ -941,4 +950,30 @@ figure {
 	@include respond-to (normal-mobile){
 		display: block;
 	}
+}
+#instafeed {
+	width: 100%;
+	a {
+		display: block;
+		float: left;
+		position: relative;
+		width: 25%;
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	@include respond-to (xxlg-screen) {
+		a {
+			width: 12.5%
+		}
+	}
+	@include respond-to (normal-mobile) {
+		a {
+			width: 50%;
+		}
+	}
+}
+#bottom {
+	position: relative;
 }
